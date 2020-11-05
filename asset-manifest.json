@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.048fd194.chunk.css",
-    "main.js": "/static/js/main.bd9bcfba.chunk.js",
-    "main.js.map": "/static/js/main.bd9bcfba.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f85a8735.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f85a8735.js.map",
-    "static/css/2.6c0f60ba.chunk.css": "/static/css/2.6c0f60ba.chunk.css",
-    "static/js/2.9ab9ce24.chunk.js": "/static/js/2.9ab9ce24.chunk.js",
-    "static/js/2.9ab9ce24.chunk.js.map": "/static/js/2.9ab9ce24.chunk.js.map",
-    "static/js/3.8e6c8271.chunk.js": "/static/js/3.8e6c8271.chunk.js",
-    "static/js/3.8e6c8271.chunk.js.map": "/static/js/3.8e6c8271.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.6c0f60ba.chunk.css.map": "/static/css/2.6c0f60ba.chunk.css.map",
-    "static/css/main.048fd194.chunk.css.map": "/static/css/main.048fd194.chunk.css.map",
-    "static/js/2.9ab9ce24.chunk.js.LICENSE.txt": "/static/js/2.9ab9ce24.chunk.js.LICENSE.txt"
+    "main.css": "/eth2.0-deposit-contract-status/static/css/main.048fd194.chunk.css",
+    "main.js": "/eth2.0-deposit-contract-status/static/js/main.bd9bcfba.chunk.js",
+    "main.js.map": "/eth2.0-deposit-contract-status/static/js/main.bd9bcfba.chunk.js.map",
+    "runtime-main.js": "/eth2.0-deposit-contract-status/static/js/runtime-main.91da8f44.js",
+    "runtime-main.js.map": "/eth2.0-deposit-contract-status/static/js/runtime-main.91da8f44.js.map",
+    "static/css/2.6c0f60ba.chunk.css": "/eth2.0-deposit-contract-status/static/css/2.6c0f60ba.chunk.css",
+    "static/js/2.daa85076.chunk.js": "/eth2.0-deposit-contract-status/static/js/2.daa85076.chunk.js",
+    "static/js/2.daa85076.chunk.js.map": "/eth2.0-deposit-contract-status/static/js/2.daa85076.chunk.js.map",
+    "static/js/3.8e6c8271.chunk.js": "/eth2.0-deposit-contract-status/static/js/3.8e6c8271.chunk.js",
+    "static/js/3.8e6c8271.chunk.js.map": "/eth2.0-deposit-contract-status/static/js/3.8e6c8271.chunk.js.map",
+    "index.html": "/eth2.0-deposit-contract-status/index.html",
+    "static/css/2.6c0f60ba.chunk.css.map": "/eth2.0-deposit-contract-status/static/css/2.6c0f60ba.chunk.css.map",
+    "static/css/main.048fd194.chunk.css.map": "/eth2.0-deposit-contract-status/static/css/main.048fd194.chunk.css.map",
+    "static/js/2.daa85076.chunk.js.LICENSE.txt": "/eth2.0-deposit-contract-status/static/js/2.daa85076.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f85a8735.js",
+    "static/js/runtime-main.91da8f44.js",
     "static/css/2.6c0f60ba.chunk.css",
-    "static/js/2.9ab9ce24.chunk.js",
+    "static/js/2.daa85076.chunk.js",
     "static/css/main.048fd194.chunk.css",
     "static/js/main.bd9bcfba.chunk.js"
   ]
