@@ -109,6 +109,9 @@ dist
 /.pnp
 .pnp.js
 
+# production
+/build
+
 # testing
 /coverage
 
