@@ -107,7 +107,7 @@ function App() {
               const link = `https://etherscan.io/tx/${item.transactionHash}`
               return (
                 <tr key={index}>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{item.transactionHash}</td>
                   <td>{item.blockNumber}</td>
                   <td>{(item.amount/1000000000).toFixed(6)}&nbsp;ETH</td>
