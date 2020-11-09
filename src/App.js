@@ -33,7 +33,7 @@ function App() {
       const allDepositEvents = await contract.getPastEvents(
         'DepositEvent',
         {
-          fromBlock: 0,
+          fromBlock: 11052984,
         }
       );
     
