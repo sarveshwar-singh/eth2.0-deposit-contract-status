@@ -99,7 +99,6 @@ function App() {
               <th>Transaction Hash</th>
               <th>Block</th>
               <th>Amount</th>
-              <th style={ {width:"400px"} }>Link</th>
             </tr> 
           </thead>
           <tbody>
@@ -108,10 +107,9 @@ function App() {
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{item.transactionHash}</td>
+                  <td><a rel={"noopener noreferrer"} target="_blank" href={link}>{item.transactionHash}</a></td>
                   <td>{item.blockNumber}</td>
                   <td>{(item.amount/1000000000).toFixed(6)}&nbsp;ETH</td>
-                  <td><a rel={"noopener noreferrer"} target="_blank" href={link}>etherscan</a></td>
                 </tr>
               );
             })}
