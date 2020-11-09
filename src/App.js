@@ -83,7 +83,7 @@ function App() {
   } else {
     content = (
       <div>
-        <div style={ {maxWidth: "400px"} }>
+        <div style={ {maxWidth: "300px"} }>
           <CircularProgressbar 
             value={result.validCount}
             maxValue={16384}
@@ -123,8 +123,9 @@ function App() {
   return(
     <div
       style={{
-          position: 'absolute', left: '50%', top: '50%',
-          transform: 'translate(-50%, -50%)'
+          position: 'absolute', left: '50%',
+          transform: 'translate(-50%, 0%)',
+          paddingTop: '30px'
       }}
     >
       {content}
