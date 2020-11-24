@@ -18,7 +18,7 @@ contract.options.address = config.address;
 function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState("");
 
   async function loadData() {
     try {
@@ -29,44 +29,48 @@ function App() {
       const totalCallCount = parseInt(totalCallCountHex.substring(2).match(/../g).reverse().join(''), 16)
       resultTemp.totalCallCount = totalCallCount;
       console.log("Total count : ", totalCallCount);
+      // const latestBlockNumber = await web3.eth.getBlockNumber();
+      // 11052984
     
-      const allDepositEvents = await contract.getPastEvents(
-        'DepositEvent',
-        {
-          fromBlock: 11052984,
-        }
-      );
+      // const allDepositEvents = await contract.getPastEvents(
+      //   'DepositEvent',
+      //   {
+      //     fromBlock: 11052984,
+      //   }
+      // );
     
-      console.log("---------------");
-      resultTemp.invalidRegistry = [];
+      // console.log("---------------");
+      // resultTemp.invalidRegistry = [];
 
-      let validCount = 0;
-      allDepositEvents.forEach(event => {
-        const amount = event.returnValues.amount;
-        const amountDecimal = parseInt(amount.substring(2).match(/../g).reverse().join(''), 16);
+      // let validCount = 0;
+      // allDepositEvents.forEach(event => {
+      //   const amount = event.returnValues.amount;
+      //   const amountDecimal = parseInt(amount.substring(2).match(/../g).reverse().join(''), 16);
     
-        if (amountDecimal >= 32000000000) {
-          validCount++;
-        } else {
-          console.log("TxHash : ", event.transactionHash);
-          console.log("Block number :", event.blockNumber);
-          console.log("Amount : ", amountDecimal);
-          console.log("---------------");
-          resultTemp.invalidRegistry.push({
-            transactionHash: event.transactionHash,
-            blockNumber: event.blockNumber,
-            amount: amountDecimal
-          });
-        }
-      });
+      //   if (amountDecimal >= 32000000000) {
+      //     validCount++;
+      //   } else {
+      //     console.log("TxHash : ", event.transactionHash);
+      //     console.log("Block number :", event.blockNumber);
+      //     console.log("Amount : ", amountDecimal);
+      //     console.log("---------------");
+      //     resultTemp.invalidRegistry.push({
+      //       transactionHash: event.transactionHash,
+      //       blockNumber: event.blockNumber,
+      //       amount: amountDecimal
+      //     });
+      //   }
+      // });
 
-      resultTemp.validCount = validCount;
+      // resultTemp.validCount = validCount;
     
-      console.log("Total count : ", totalCallCount);
-      console.log("Valid Count : " + validCount);
+      // console.log("Total count : ", totalCallCount);
+      // console.log("Valid Count : " + validCount);
 
       setResult(resultTemp);
-          
+    } catch(err) {
+      setError(err.message);
+      console.error(err);    
     } finally {
       setLoading(false);
     }
@@ -78,20 +82,22 @@ function App() {
   }, []);
 
   let content = {};
-  if(loading) {
+  if (error) {
+    content = <p>{error}</p>
+  } else if(loading) {
     content = <p>Loading...</p>
   } else {
     content = (
       <div>
         <div style={ {maxWidth: "300px"} }>
           <CircularProgressbar 
-            value={result.validCount}
+            value={result.totalCallCount}
             maxValue={16384}
-            text={`${(result.validCount/16384 * 100).toFixed(2)}%`}
+            text={`${(result.totalCallCount/16384 * 100).toFixed(2)}%`}
           />
         </div>
-        <p>{result.validCount} validators registered, more {Math.max(16384 - result.validCount, 0)} needed to fill 16384</p>
-        <p>Invalid Registry ({result.invalidRegistry.length}) :</p>
+        <p>{result.totalCallCount} validators registered, more {Math.max(16384 - result.totalCallCount, 0)} needed to fill 16384</p>
+        {/* <p>Invalid Registry ({result.invalidRegistry.length}) :</p>
         <table className="styled-table">
           <thead>
             <tr>
@@ -114,7 +120,7 @@ function App() {
               );
             })}
           </tbody>
-        </table>
+        </table> */}
       </div>
     );
   }
